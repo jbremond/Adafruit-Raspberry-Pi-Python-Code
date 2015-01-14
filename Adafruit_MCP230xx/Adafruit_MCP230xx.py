@@ -116,7 +116,7 @@ class Adafruit_MCP230XX(object):
 
     def input(self, pin):
         assert pin >= 0 and pin < self.num_gpios, "Pin number %s is invalid, only 0-%s are valid" % (pin, self.num_gpios)
-        assert self.direction & (1 << pin) != 0, "Pin %s not set to input" % pin
+        #assert self.direction & (1 << pin) != 0, "Pin %s not set to input" % pin
         if self.num_gpios <= 8:
             value = self.i2c.readU8(MCP23008_GPIOA)
         elif self.num_gpios > 8 and self.num_gpios <= 16:
